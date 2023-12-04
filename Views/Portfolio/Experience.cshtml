@@ -1,12 +1,24 @@
 ﻿
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+
     int veritas = 8, dijitech = 8, pasatempos = 4, appbab = 2;
+
+    int lastJobYear = 2023;
+    int lastJobMount = 02;
+
+    var LastJobMounthDifference = ((DateTime.Now.Year - lastJobYear) * 12) + (DateTime.Now.Month - lastJobMount);
+    veritas = LastJobMounthDifference;
 
     int total_experience_month = total_experience_month = veritas + dijitech + pasatempos + appbab;
     int month = total_experience_month % 12;
     int year = total_experience_month / 12;
-    string total_experience = year.ToString() + " year " + month.ToString() + " month";
+
+    string total_experience = $"{year} Year {month} Month";
+    if(month == 0)
+    {
+        total_experience = $"{year} year";
+    }
 }
 
 <div class="pb-3">

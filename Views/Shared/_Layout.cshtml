@@ -7,13 +7,14 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
-    <link rel="stylesheet" href="~/Static/adminlte/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/adminlte/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-    <link rel="stylesheet" href="~/Static/adminlte/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="~/adminlte/dist/css/adminlte.min.css">
 
-    <link rel="stylesheet" href="~/Static/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Portfolio.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/adminlte/asset/css/site.css" />
+
+    <link rel="stylesheet" href="~/Portfolio.styles.css " asp-append-version="true" />
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -55,47 +56,14 @@
 
         <partial name="@Portfolio.Utility.Folders.Footer" />
     </div>
-    @*
-    <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-    <div class="container-fluid">
-    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Portfolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-    <ul class="navbar-nav flex-grow-1">
-    <li class="nav-item">
-    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </li>
-    </ul>
-    </div>
-    </div>
-    </nav>
-    </header>
-    <div class="container">
-    <main role="main" class="pb-3">
-    @RenderBody()
-    </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-    <div class="container">
-    &copy; 2023 - Portfolio - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
-    </footer>*@
+    <script src="~/adminlte/plugins/jquery/jquery.min.js"></script>
 
-    <script src="~/Static/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/adminlte/dist/js/adminlte.min.js"></script>
 
-    <script src="~/Static/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script src="~/Static/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="~/Static/adminlte/dist/js/adminlte.min.js"></script>
-
-    <script src="~/Static/js/site.js" asp-append-version="true"></script>
+    <script src="~/adminlte/asset/js/site.js" asp-append-version="true"></script>
 
     <script type="text/javascript">
         let SidebarSection = document.getElementById('activeSidebarSection').value;

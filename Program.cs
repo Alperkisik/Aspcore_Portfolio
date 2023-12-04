@@ -1,3 +1,5 @@
+using Microsoft.Extensions.FileProviders;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,7 +10,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Portfolio/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
@@ -16,21 +18,25 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+/*app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+           Path.Combine(builder.Environment.ContentRootPath, "Static")),RequestPath = "/Static"
+});*/
+
 app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(name: "default", pattern: "{controller=Portfolio}/{action=Index}/{id?}");
 
-app.MapControllerRoute("AboutMe", "about-me", new { controller = "Home", action = "AboutMe" });
-app.MapControllerRoute("Resume", "resume", new { controller = "Home", action = "Resume" });
-app.MapControllerRoute("Education", "education", new { controller = "Home", action = "Education" });
-app.MapControllerRoute("Experience", "experience", new { controller = "Home", action = "Experience" });
-app.MapControllerRoute("Skills", "kills", new { controller = "Home", action = "Skills" });
-app.MapControllerRoute("Roadmap", "roadmap", new { controller = "Home", action = "Roadmap" });
-app.MapControllerRoute("Projects", "projects", new { controller = "Home", action = "Projects" });
-app.MapControllerRoute("Contact", "contact", new { controller = "Home", action = "Contact" });
+app.MapControllerRoute("AboutMe", "about-me", new { controller = "Portfolio", action = "AboutMe" });
+app.MapControllerRoute("Resume", "resume", new { controller = "Portfolio", action = "Resume" });
+app.MapControllerRoute("Education", "education", new { controller = "Portfolio", action = "Education" });
+app.MapControllerRoute("Experience", "experience", new { controller = "Portfolio", action = "Experience" });
+app.MapControllerRoute("Skills", "kills", new { controller = "Portfolio", action = "Skills" });
+app.MapControllerRoute("Roadmap", "roadmap", new { controller = "Portfolio", action = "Roadmap" });
+app.MapControllerRoute("Projects", "projects", new { controller = "Portfolio", action = "Projects" });
+app.MapControllerRoute("Contact", "contact", new { controller = "Portfolio", action = "Contact" });
 
 app.Run();
